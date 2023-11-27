@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "1fe2f610-ffdf-4c11-8501-dbebfb6a2709",
+		"name": "Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18791134",
+		"_collection_link": "https://galactic-meteor-870189.postman.co/workspace/N5NowChallenge~bc8dafd5-4aa7-472e-8fe8-42f11f5fd382/collection/18791134-1fe2f610-ffdf-4c11-8501-dbebfb6a2709?action=share&source=collection_link&creator=18791134"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Permisos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstNameEmployee\": \"Sofia Victoria\",\r\n  \"lastNameEmployee\": \"Muller\",\r\n  \"permissionTypeId\": 1,\r\n  \"datePermission\": \"2023-11-24T14:39:37.051Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5093/api/Permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permisos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/api/Permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permisos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"permissionId\": 1,\r\n  \"firstNameEmployee\": \"Valentin\",\r\n  \"lastNameEmployee\": \"Plaza\",\r\n  \"permissionTypeId\": 3,\r\n  \"datePermission\": \"2023-11-24T14:39:37.051Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5093/api/Permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prod",
+			"item": [
+				{
+					"name": "Permisos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstNameEmployee\": \"Sofia Victoria\",\r\n  \"lastNameEmployee\": \"Muller\",\r\n  \"permissionTypeId\": 1,\r\n  \"datePermission\": \"2023-11-24T14:39:37.051Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/Permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permisos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/api/Permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permisos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"permissionId\": 1,\r\n  \"firstNameEmployee\": \"Valentin\",\r\n  \"lastNameEmployee\": \"Plaza\",\r\n  \"permissionTypeId\": 3,\r\n  \"datePermission\": \"2023-11-24T14:39:37.051Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/Permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
