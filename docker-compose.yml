@@ -28,6 +28,8 @@ services:
       - SA_PASSWORD=Admin@123
     ports:
       - "1433:1433"
+    volumes:
+      - ./db-init.sql:/db-init.sql
     networks:
       - dev
 
