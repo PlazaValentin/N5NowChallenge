@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Queries\NewFolder\**" />
+    <Compile Remove="Validators\**" />
+    <EmbeddedResource Remove="Queries\NewFolder\**" />
+    <EmbeddedResource Remove="Validators\**" />
+    <None Remove="Queries\NewFolder\**" />
+    <None Remove="Validators\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Confluent.Kafka" Version="2.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Scrutor" Version="4.2.2" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\N5NowChallenge.Domain\N5NowChallenge.Domain.csproj" />
+    <ProjectReference Include="..\N5NowChallenge.Infrastructure\N5NowChallenge.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

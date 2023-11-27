@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5NowChallenge.Infrastructure", "N5NowChallenge.Infrastructure\N5NowChallenge.Infrastructure.csproj", "{44DE1D2A-2C52-4419-8EC3-8F132E5B541E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5NowChallenge.Domain", "N5NowChallenge.Domain\N5NowChallenge.Domain.csproj", "{A8936D33-8AB2-4650-AE21-F23B6DE3C036}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5NowChallenge.Application", "N5NowChallenge.Application\N5NowChallenge.Application.csproj", "{7DC03D59-6711-4368-B3ED-E689F440BEEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5NowChallenge.API", "N5NowChallenge.API\N5NowChallenge.API.csproj", "{AEFB658D-53EE-47EF-BD9C-24C4911FC27E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A9577717-D3C8-4503-8B5F-E1F637484124}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{0528AF01-D8CB-4001-AA6D-7E5F570FAA27}"
+	ProjectSection(SolutionItems) = preProject
+		db-init.sql = db-init.sql
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{5484BEE1-63F4-40A0-A088-D04736EBBC92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.IntegrationTests", "IntegrationTests\Application.IntegrationTests.csproj", "{B8741A29-D8C7-45D0-9E80-1701AE6A1C32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44DE1D2A-2C52-4419-8EC3-8F132E5B541E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DE1D2A-2C52-4419-8EC3-8F132E5B541E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DE1D2A-2C52-4419-8EC3-8F132E5B541E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DE1D2A-2C52-4419-8EC3-8F132E5B541E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8936D33-8AB2-4650-AE21-F23B6DE3C036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8936D33-8AB2-4650-AE21-F23B6DE3C036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8936D33-8AB2-4650-AE21-F23B6DE3C036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8936D33-8AB2-4650-AE21-F23B6DE3C036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC03D59-6711-4368-B3ED-E689F440BEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC03D59-6711-4368-B3ED-E689F440BEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC03D59-6711-4368-B3ED-E689F440BEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC03D59-6711-4368-B3ED-E689F440BEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEFB658D-53EE-47EF-BD9C-24C4911FC27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEFB658D-53EE-47EF-BD9C-24C4911FC27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEFB658D-53EE-47EF-BD9C-24C4911FC27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEFB658D-53EE-47EF-BD9C-24C4911FC27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5484BEE1-63F4-40A0-A088-D04736EBBC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5484BEE1-63F4-40A0-A088-D04736EBBC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5484BEE1-63F4-40A0-A088-D04736EBBC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5484BEE1-63F4-40A0-A088-D04736EBBC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8741A29-D8C7-45D0-9E80-1701AE6A1C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8741A29-D8C7-45D0-9E80-1701AE6A1C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8741A29-D8C7-45D0-9E80-1701AE6A1C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8741A29-D8C7-45D0-9E80-1701AE6A1C32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5484BEE1-63F4-40A0-A088-D04736EBBC92} = {A9577717-D3C8-4503-8B5F-E1F637484124}
+		{B8741A29-D8C7-45D0-9E80-1701AE6A1C32} = {A9577717-D3C8-4503-8B5F-E1F637484124}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F12A65EF-E08A-4A5A-AA15-D3141846FC7B}
+	EndGlobalSection
+EndGlobal

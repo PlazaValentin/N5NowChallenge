@@ -1,0 +1,87 @@
+version: '3.1'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    volumes:
+      - elastiscsearch-data:/usr/share/elasticsearch/datafile
+    networks:
+      - dev
+  
+  mssql-server-linux:
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Admin@123
+    ports:
+      - "1433:1433"
+    networks:
+      - dev
+
+  zookeeper:
+    container_name: zookeeper
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+    networks:
+      - dev
+    
+  kafka-broker-l:
+    container_name: kafka-broker-l
+    image: confluentinc/cp-kafka:latest
+    hostname: ksqldb-server
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_OFFSET_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+    ports:
+      - "9092:9092"
+    networks:
+      - dev
+  
+  n5nowchallenge:
+    container_name: n5nowchallengeAPI
+    depends_on:
+      - "mssql-server-linux"
+      - "elasticsearch"
+    ports:
+      - "8088:80"
+    build:
+      context: .
+      dockerfile: Dockerfile  
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql-server-linux,1433;Database=N5NowChallengeDb;User Id=sa;Password=Admin@123;TrustServerCertificate=True;
+      - ASPNETCORE_URLS=http://+:80
+      - ElasticSettings__Uri=http://elasticsearch:9200
+      - ElasticSettings__index=permission
+      - Kafka__Uri=localhost:9092
+      - Kafka__Topic=N5NowChallenge
+    networks:
+      - dev
+
+volumes:
+  elastiscsearch-data:    
+  mssql-server-linux-data:      
