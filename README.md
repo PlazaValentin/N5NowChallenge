@@ -19,6 +19,8 @@ Muchas gracias por la oportunidad, espero les guste el trabajo realizado y podam
 4. **Ejecutar el script de la base de datos en azure data store (./db-init.sql)**
    ```bash
    docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Admin@123 -d master -i ./ruta/del/script/db-init.sql
+5. **Ya se puede hacer uso de la aplicacion ingresando a http://localhost:8088/swagger/index.html**
+   
 ## Desafio
 
 N5 company requests a Web API for registering user permissions, to carry out  
