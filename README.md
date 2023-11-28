@@ -16,9 +16,9 @@ Muchas gracias por la oportunidad, espero les guste el trabajo realizado y podam
    ```bash
    docker-compose up -d
 
-4. **Ejecutar el script de la base de datos en azure data store (./db-init.sql)**
+4. **Ejecutar el script de la base de datos**
    ```bash
-   docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Admin@123 -d master -i ./ruta/del/script/db-init.sql
+   docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Admin@123 -d master -i ./db-init.sql
 5. **Ya se puede hacer uso de la aplicacion ingresando a http://localhost:8088/swagger/index.html**
    
 ## Desafio
