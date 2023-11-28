@@ -15,6 +15,8 @@ Muchas gracias por la oportunidad, espero les guste el trabajo realizado y podam
 3. **Ejecutar el script de la base de datos**
    ```bash
    docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Admin@123 -d master -i ./db-init.sql
+Puede suceder que necesiten esperar unos minutos hasta que se levanten el sqlserver container para poder ejecutar el comando.
+
 4. **Ya se puede hacer uso de la aplicacion ingresando a http://localhost:8088/swagger/index.html**
    
 ## Desafio
