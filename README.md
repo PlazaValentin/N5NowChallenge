@@ -8,18 +8,14 @@ Muchas gracias por la oportunidad, espero les guste el trabajo realizado y podam
    ```bash
    git clone https://github.com/tuusuario/N5NowChallenge.git
 
-2. **Crear la imagen para docker de la aplicacion:**
-   ```bash
-   docker build .
-
-3. **Ejecutar el docker-compose.yml**
+2. **Ejecutar el docker-compose.yml**
    ```bash
    docker-compose up -d
 
-4. **Ejecutar el script de la base de datos**
+3. **Ejecutar el script de la base de datos**
    ```bash
    docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Admin@123 -d master -i ./db-init.sql
-5. **Ya se puede hacer uso de la aplicacion ingresando a http://localhost:8088/swagger/index.html**
+4. **Ya se puede hacer uso de la aplicacion ingresando a http://localhost:8088/swagger/index.html**
    
 ## Desafio
 
