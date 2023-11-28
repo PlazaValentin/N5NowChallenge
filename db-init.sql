@@ -22,13 +22,16 @@ CREATE TABLE [Permissions](
 	FOREIGN KEY ([PermissionTypeId]) REFERENCES [PermissionsType]([Id])
 )
 GO
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Admin')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('User')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Sudo')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Viewer')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Manager')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Guest')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Editor')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Analyst')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Developer')
-INSERT INTO [PermissionsType] ([Description]) VALUES ('Supervisor')
+IF (SELECT COUNT(*) FROM PermissionsType) = 0
+BEGIN
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Admin')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('User')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Sudo')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Viewer')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Manager')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Guest')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Editor')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Analyst')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Developer')
+	INSERT INTO [PermissionsType] ([Description]) VALUES ('Supervisor')
+END
