@@ -6,7 +6,7 @@ Muchas gracias por la oportunidad, espero les guste el trabajo realizado y podam
 
 1. **Descargar el Repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/N5NowChallenge.git
+   git clone https://github.com/PlazaValentin/N5NowChallenge.git
 
 2. **Ejecutar el docker-compose.yml**
    ```bash
